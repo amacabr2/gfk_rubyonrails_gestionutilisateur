@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     user_params = params.require(:user).permit(:username, :email, :password, :password_confirmation)
     @user = User.new(user_params)
     if @user.valid?
-      
+
     else
       render 'new'
     end

@@ -6,5 +6,6 @@
 /vendor
 config.ru
 Gemfile.lock
+time.text
 /node_modules
 /yarn-error.log

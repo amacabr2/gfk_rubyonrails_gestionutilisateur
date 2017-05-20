@@ -1,0 +1,10 @@
+.idea
+/bin
+/config
+/log
+/tmp
+/vendor
+config.ru
+Gemfile.lock
+/node_modules
+/yarn-error.log

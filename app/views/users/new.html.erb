@@ -6,6 +6,16 @@
 
   <div class="col-md-8">
 
+    <% if @user.errors.any? %>
+      <div class="alert alert-danger">
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <div class="panel panel-default">
 
       <div class="panel-heading">
@@ -44,6 +54,12 @@
               </div>
             </div>
 
+            <div class="form-group">
+              <div class="col-md-6 col-md-offset-4">
+                <button type="submit" class="btn btn-primary">S'nscrire</button>
+              </div>
+            </div>
+
         <% end %>
 
       </div>
@@ -53,7 +69,7 @@
   </div>
 
   <div class="col-md-4">
-    <%= image_tag 'cat.jpg', width: 200 %>
+    <%= image_tag 'cat.jpg', width: 300 %>
   </div>
 
 </div>

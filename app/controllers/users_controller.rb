@@ -16,4 +16,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def confirm
+    @user = User.find(params[:id])
+    if @user.confirmation_token == params[:token]
+      @user.update_attributes(confirmed: true, confirmation_token: nil)
+      @user.save(validate: false)
+      session[:auth] = {id: @user.id}
+      redirect_to profil_path, success: "Votre compte a bien été validé"
+    else
+      redirect new_user_path, danger: "Ce token n'est pas valide"
+    end
+  end
+
+  def edit
+
+  end
+
+  def update
+
+  end
+
 end

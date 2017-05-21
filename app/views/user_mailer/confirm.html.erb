@@ -9,7 +9,7 @@
         Bonjour <%=	@user.username %>. <br>
         Vous avez decidé de vous inscrire sur <%= Rails.application.config.site[:name] %> et vous avez bien fait. <br>
         Il vous reste maintenant une petite étape c'est confirmer votre compte. <br>
-        Voici le lien <%= confirm_user_url(id: @user.id, token: @user.confirmation_token) %>
+        Voici le lien <a href="<%= confirm_user_url(id: @user.id, token: @user.confirmation_token) %>" class="btn btn-primary">ici</a>
       </p>
     </div>
   </div>

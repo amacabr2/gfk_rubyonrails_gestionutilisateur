@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     user_params = params.require(:user).permit(:username, :email, :password, :password_confirmation)
     @user = User.new(user_params)
+    @user.recover_password = nil
     if @user.valid?
       @user.save
       UserMailer.confirm(@user).deliver_now
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    user_params = params.require(:user).permit(:username, :firstname, :lastname, :avatar_file, :email, :password, :password_confirmation)
+    user_params = params.require(:user).permit(:username, :firstname, :lastname, :avatar_file, :email)
     if @user.update(user_params)
       redirect_to profil_path, success: 'Votre compte a bien été mis à jour'
     else

@@ -37,7 +37,13 @@ class User < ApplicationRecord
     if avatar_file.respond_to? :path
       dir  = File.dirname(path)
       FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
-      FileUtils.cp(avatar_file.path, path)
+      image = MiniMagick::Image.new(avatar_file.path) do |b|
+        b.resize '150x150^'
+        b.gravity 'Center'
+        b.crop '150x150+0+0'
+      end
+      image.format 'jpg'
+      image.write path
     end
   end
 

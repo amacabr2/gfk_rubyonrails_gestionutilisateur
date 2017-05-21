@@ -7,5 +7,6 @@
 config.ru
 Gemfile.lock
 time.text
+public/users
 /node_modules
 /yarn-error.log

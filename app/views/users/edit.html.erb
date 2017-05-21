@@ -41,6 +41,20 @@
             </div>
 
             <div class="form-group">
+              <%= f.label :firstname, "Prénom", class: 'col-md-4 control-label'%>
+              <div class="col-md-6">
+                <%= f.text_field :firstname, class: 'form-control' %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :lastname, "Nom", class: 'col-md-4 control-label'%>
+              <div class="col-md-6">
+                <%= f.text_field :lastname, class: 'form-control' %>
+              </div>
+            </div>
+
+            <div class="form-group">
               <%= f.label :password, "Mot de passe", class: 'col-md-4 control-label'%>
               <div class="col-md-6">
                 <%= f.password_field :password, class: 'form-control' %>
@@ -51,6 +65,13 @@
               <%= f.label :password_confirmation, "Confirmer le mot de passe", class: 'col-md-4 control-label'%>
               <div class="col-md-6">
                 <%= f.password_field :password_confirmation, class: 'form-control' %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :avatar, "Avatar", class: 'col-md-4 control-label'%>
+              <div class="col-md-6">
+                <%= f.file_field :avatar_file, class: 'form-control' %>
               </div>
             </div>
 

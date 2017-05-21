@@ -1,5 +1,14 @@
 <div class="page-header">
-  <h1>Votre compte Petsy</h1>
+  <div class="row">
+    <div class="col-lg-2">
+      <% if @user.avatar %>
+          <%= image_tag @user.avatar_url %>
+      <% end %>
+    </div>
+    <div class="col-lg-10">
+      <h1>Votre compte Petsy</h1>
+    </div>
+  </div>
 </div>
 
 <div class="row">

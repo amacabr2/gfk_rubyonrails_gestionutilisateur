@@ -21,6 +21,10 @@ class ApplicationController < ActionController::Base
     !current_user.nil?
   end
 
+  def only_signed_out
+    redirect_to profil_path if user_signed_in?
+  end
+
   def current_user
     return nil if !session[:auth] || !session[:auth]['id']
     return @_user if @_user

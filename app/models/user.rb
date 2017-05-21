@@ -19,4 +19,8 @@ class User < ApplicationRecord
       message: " Il éxiste déjà un compte avec ce mail"
   }
 
+  def to_session
+    {id: id}
+  end
+
 end
